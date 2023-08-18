@@ -9,7 +9,17 @@ from pathlib import Path
 
 
 def get_project_root():
-    """逐级向上寻找项目根目录"""
+    """
+    The get_project_root function is used to find the root directory of a project.
+    It does this by looking for the existence of either a .git or .project_root file in
+    the current working directory, and if it doesn't find one, it looks in its parent
+    directory. It continues doing this until it finds either a .git or .project_root file,
+    or until there are no more parent directories left to look through (in which case an exception is raised).
+
+    :return: The path to the root of the project
+    :doc-author: Trelent
+    """
+
     current_path = Path.cwd()
     while True:
         if (current_path / '.git').exists() or \

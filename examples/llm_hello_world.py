@@ -12,6 +12,13 @@ from metagpt.logs import logger
 
 
 async def main():
+    """
+    The main function of the module.
+
+    :return: A coroutine, so you need to call it with asyncio
+    :doc-author: Trelent
+    """
+
     llm = LLM()
     claude = Claude()
     logger.info(await claude.aask('你好，请进行自我介绍'))
