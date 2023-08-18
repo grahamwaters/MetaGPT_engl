@@ -8,12 +8,21 @@ from setuptools import Command, find_packages, setup
 
 
 class InstallMermaidCLI(Command):
-    """A custom command to run `npm install -g @mermaid-js/mermaid-cli` via a subprocess."""
-
+    """Install mermaid-cli"""
     description = "install mermaid-cli"
     user_options = []
 
     def run(self):
+        """
+        The run function is the entry point for setuptools.
+        It will be called with no arguments and should do whatever your project's setup script does: run other setup commands, print project information, or anything else you want to do before users can use your project.
+
+
+        :param self: Represent the instance of the class
+        :return: A list of strings
+        :doc-author: Trelent
+        """
+
         try:
             subprocess.check_call(["npm", "install", "-g", "@mermaid-js/mermaid-cli"])
         except subprocess.CalledProcessError as e:
@@ -34,8 +43,8 @@ setup(
     description="The Multi-Role Meta Programming Framework",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://gitlab.deepwisdomai.com/pub/metagpt",
-    author="Alexander Wu",
+    url="https://github.com/grahamwaters/MetaGPT_engl.git",
+    author=["Alexander Wu", "Graham Waters"],
     author_email="alexanderwu@fuzhi.ai",
     license="Apache 2.0",
     keywords="metagpt multi-role multi-agent programming gpt llm",
